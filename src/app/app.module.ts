@@ -20,6 +20,7 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     routing
   ],
   providers: [
