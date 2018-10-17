@@ -12,6 +12,9 @@ import { CombinationComponent } from './combinations/combinations.component';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 
+import { AuthenticationService } from './_services';
+import { AuthGuard } from './_guards';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,8 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    AuthenticationService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
