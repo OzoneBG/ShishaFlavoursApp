@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { ContactComponent } from './contact/contact.component';
 import { CombinationComponent } from './combinations/combinations.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 
@@ -19,7 +20,8 @@ import { AuthGuard } from './_guards';
   declarations: [
     AppComponent,
     CombinationComponent,
-    ContactComponent
+    ContactComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
