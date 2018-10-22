@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../_services';
 
@@ -7,7 +8,8 @@ import { AuthenticationService } from '../_services';
     templateUrl: './login.component.html'
 })
 export class LoginComponent {
-    constructor(private authService: AuthenticationService) {}
+
+    constructor(private authService: AuthenticationService, private router: Router) {}
 
     loginForm = new FormGroup({
         username: new FormControl('', Validators.required),
@@ -16,10 +18,11 @@ export class LoginComponent {
 
     onSubmit() {
         let inputModel = this.loginForm.value;
-        this.authService.login(inputModel.username, inputModel.password);
-        if(this.authService.isAuthenticated()) {
-            console.log('Authenticated');
-            //if successfull redirect
+        let success = this.authService.login(inputModel.username, inputModel.password);
+        if(success) {
+            this.router.navigate(['/combinations']);
+        } else {
+            console.log('Not logged in');
         }
     }
 }

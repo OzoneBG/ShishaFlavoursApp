@@ -17,7 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 
 import { AuthenticationService } from './_services';
-import { AuthGuard } from './_guards';
+import { AuthGuard, NotAuthGuard } from './_guards';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { AuthGuard } from './_guards';
     //{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     AuthenticationService,
     AuthGuard,
+    NotAuthGuard,
     CookieService
   ],
   bootstrap: [AppComponent]

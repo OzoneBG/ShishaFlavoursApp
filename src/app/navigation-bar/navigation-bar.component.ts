@@ -12,4 +12,8 @@ export class NavigationBarComponent {
   isAuthenticated(): boolean {
     return this.authService.isAuthenticated();
   }
+
+  logout() {
+    this.authService.logout();
+  }
 }
