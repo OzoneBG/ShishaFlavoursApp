@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: '127.0.0.1',
-  userRepo: 'user'
+  apiEndpoint: 'http://127.0.0.1:50480/',
+  apiSuffix: 'api/',
+  userRepo: 'user',
 };
 
 /*
