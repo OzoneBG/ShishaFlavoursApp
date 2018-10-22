@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'combinations',
+    selector: 'my-combinations',
     template: `Combination Component Hi`
 })
-export class CombinationComponent {
+export class MyCombinationsComponent {
  }

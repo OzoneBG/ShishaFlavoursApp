@@ -10,9 +10,10 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 
 import { ContactComponent } from './contact/contact.component';
-import { CombinationComponent } from './combinations/combinations.component';
+import { MyCombinationsComponent } from './my-combinations/my-combinations.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 
@@ -22,10 +23,11 @@ import { AuthGuard, NotAuthGuard } from './_guards';
 @NgModule({
   declarations: [
     AppComponent,
-    CombinationComponent,
+    MyCombinationsComponent,
     ContactComponent,
     NavigationBarComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
