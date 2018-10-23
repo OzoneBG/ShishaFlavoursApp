@@ -18,7 +18,7 @@ import { SettingsComponent } from './settings/settings.component';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 
-import { AuthenticationService } from './_services';
+import { AuthenticationService, FlavourCombinationStats } from './_services';
 import { AuthGuard, NotAuthGuard } from './_guards';
 
 @NgModule({
@@ -43,7 +43,8 @@ import { AuthGuard, NotAuthGuard } from './_guards';
     AuthenticationService,
     AuthGuard,
     NotAuthGuard,
-    CookieService
+    CookieService,
+    FlavourCombinationStats
   ],
   bootstrap: [AppComponent]
 })

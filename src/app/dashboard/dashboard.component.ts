@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FlavourCombinationStats } from '../_services';
 
 @Component({
   selector: 'dashboard',
@@ -6,4 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+    flavours: Array<any> = new Array(0);
+
+    constructor(private flavoursStats: FlavourCombinationStats) {
+      this.getTopTenCombos();
+    }
+ 
+    getTopTenCombos() {
+        this.flavoursStats.getTopTenCombos()
+        .subscribe(
+            response => {
+                this.flavours.push(response);
+            }
+        );
+    }   
 }

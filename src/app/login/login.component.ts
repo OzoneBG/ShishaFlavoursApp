@@ -20,7 +20,7 @@ export class LoginComponent {
         let inputModel = this.loginForm.value;
         let success = this.authService.login(inputModel.username, inputModel.password);
         if(success) {
-            this.router.navigate(['/combinations']);
+            this.router.navigate(['/contact']);
         } else {
             console.log('Not logged in');
         }

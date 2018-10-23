@@ -3,7 +3,7 @@ import { AuthenticationService } from '../_services';
 
 @Component({
     selector: 'contact',
-    template: 'Contact Component Hi <br /> <h1>{{isAuthenticated}}</h1>'
+    templateUrl: './contact.component.html'
 })
 
 export class ContactComponent {
