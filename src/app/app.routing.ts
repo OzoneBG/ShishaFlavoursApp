@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { AuthGuard, NotAuthGuard } from './_guards';
 import { LoginComponent } from './login/login.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard] },
+    { path: 'profile-settings', component: SettingsComponent, canActivate: [AuthGuard] },
 
     //Otherwise redirect to home
     { path: '**', redirectTo: ''}

@@ -14,6 +14,7 @@ import { MyCombinationsComponent } from './my-combinations/my-combinations.compo
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SettingsComponent } from './settings/settings.component';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 
@@ -27,7 +28,8 @@ import { AuthGuard, NotAuthGuard } from './_guards';
     ContactComponent,
     NavigationBarComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
