@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FlavourCombinationStats } from '../_services';
+import { FlavourCombinationStats, AuthenticationService } from '../_services';
 
 @Component({
   selector: 'dashboard',
@@ -9,7 +9,7 @@ import { FlavourCombinationStats } from '../_services';
 export class DashboardComponent {
     flavours: Array<any> = new Array(0);
 
-    constructor(private flavoursStats: FlavourCombinationStats) {
+    constructor(private flavoursStats: FlavourCombinationStats, private authService: AuthenticationService) {
       this.getTopTenCombos();
     }
  
@@ -20,5 +20,9 @@ export class DashboardComponent {
                 this.flavours.push(response);
             }
         );
-    }   
+    }
+
+    isAuthenticated(): boolean {
+        return this.authService.isAuthenticated();
+    }
 }

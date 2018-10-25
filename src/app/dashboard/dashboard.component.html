@@ -1,19 +1,18 @@
-
-<div class="container">
+<!-- <div class="container">
     <div class="row">
-        <div class="col-md stats-container">
+        <div *ngIf="isAuthenticated()" class="col-md stats-container">
             <h4>Top 10 Flavour Combinations</h4>
             <span class="tiny-description">By users</span>
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let flavour of flavours; let i = index;">{{flavour[i].name}}</li>
             </ul>
         </div>
-        <div class="col-md col-sm stats-container">
+        <div *ngIf="isAuthenticated()" class="col-md col-sm stats-container">
             <h4>Your top 5 combinations</h4>
             <span class="tiny-description">Your favourites</span>
             <ul class="list-group">
                 <li class="list-group-item">One</li>
-            </ul>        
+            </ul>
         </div>
         <div class="col-md col-sm stats-container">
             <h4>Last added</h4>
@@ -21,6 +20,42 @@
             <ul class="list-group">
                 <li class="list-group-item">Last added combo</li>
             </ul> 
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div *ngIf="isAuthenticated()" class="row">
+        <div class="col-md col-sm">
+            <h3>Personal</h3>
+            <div class="row">
+                <div class="col-md col-sm stats-container">
+                    <h4>Your top 5 combinations</h4>
+                    <span class="tiny-description">Your favourites</span>
+                    <ul class="list-group">
+                        <li class="list-group-item">One</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md col-sm">
+            <h2>From the users</h2>
+            <div class="row">
+                <div class="col-md stats-container">
+                    <h4>Top 10 Flavour Combinations</h4>
+                    <span class="tiny-description">By users</span>
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let flavour of flavours; let i = index;">{{flavour[i].name}}</li>
+                    </ul>
+                </div>
+                <div class="col-md col-sm">
+                    <h4>Last added</h4>
+                    <span class="tiny-description">Last added by user</span>
+                    <p class="list-group-item">Last added combo</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

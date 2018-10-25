@@ -7,14 +7,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard, NotAuthGuard } from './_guards';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'my-combinations', component: MyCombinationsComponent },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
+    { path: 'contact', component: ContactComponent },
     { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard] },
     { path: 'profile-settings', component: SettingsComponent, canActivate: [AuthGuard] },
+    { path: 'register', component: RegisterComponent, canActivate: [NotAuthGuard]},
 
     //Otherwise redirect to home
     { path: '**', redirectTo: ''}

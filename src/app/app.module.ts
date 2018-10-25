@@ -15,10 +15,11 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
+import { RegisterComponent } from './register/register.component';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 
-import { AuthenticationService, FlavourCombinationStats } from './_services';
+import { AuthenticationService, FlavourCombinationStats, UserService } from './_services';
 import { AuthGuard, NotAuthGuard } from './_guards';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AuthGuard, NotAuthGuard } from './_guards';
     NavigationBarComponent,
     LoginComponent,
     DashboardComponent,
-    SettingsComponent
+    SettingsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { AuthGuard, NotAuthGuard } from './_guards';
     AuthGuard,
     NotAuthGuard,
     CookieService,
-    FlavourCombinationStats
+    FlavourCombinationStats,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
